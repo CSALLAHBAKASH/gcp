@@ -27,8 +27,30 @@ gcloud config get compute/regin
 
 ```bash
 pip install google-cloud-storage
+pip install google-cloud-bigquery
+pip install pandas-gbq
+pip install google-api-python-client
+pip install google-auth
+pip install google-auth-oauthlib
+pip install google-cloud-datastore
+pip install google-cloud-pubsub
+pip install google-cloud-resource-manager
+pip install google-cloud-logging
 
 ```
+
+## Authentication
+```bash
+export GOOGLE_APPLICATION_CREDENTIALS="path/to/service_account_key.json"
+```
+
+```python
+credentials = service_account.Credentials.from_service_account_file(
+    'path/to/service_account_key.json',
+    scopes=['https://www.googleapis.com/auth/bigquery']
+)
+```
+
 
 ```bash
 # DefaultCredentialsError: Your default credentials were not found.
