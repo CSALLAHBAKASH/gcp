@@ -1,0 +1,24 @@
+# cloudbuild.yaml
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/flask-vm-control', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/flask-vm-control']
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'flask-vm-control'
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/flask-vm-control'
+      - '--platform'
+      - 'managed'
+      - '--region'
+      - 'us-central1' # Change as needed
+      - '--allow-unauthenticated'
+    env:
+      - 'PROJECT_ID=$PROJECT_ID'
+      - 'ZONE=us-central1-a' # Change as needed
+      - 'VM_NAME=my-test-vm' # Change as needed
+substitutions:
+  _PROJECT_ID: 'massive-tensor-452009-d2' # Replace with your project ID

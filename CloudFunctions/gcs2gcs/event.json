@@ -1,0 +1,31 @@
+{
+  "attributes": {
+    "specversion": "1.0",
+    "id": "14108665282012825",
+    "source": "//storage.googleapis.com/projects/_/buckets/mominali_gcs_10",
+    "type": "google.cloud.storage.object.v1.finalized",
+    "datacontenttype": "application/json",
+    "subject": "objects/citycd.csv",
+    "time": "2025-02-26T15:28:21.403855Z",
+    "bucket": "mominali_gcs_10"
+  },
+  "data": {
+    "kind": "storage#object",
+    "id": "mominali_gcs_10/citycd.csv/1740583701400498",
+    "selfLink": "https://www.googleapis.com/storage/v1/b/mominali_gcs_10/o/citycd.csv",
+    "name": "citycd.csv",
+    "bucket": "mominali_gcs_10",
+    "generation": "1740583701400498",
+    "metageneration": "1",
+    "contentType": "text/csv",
+    "timeCreated": "2025-02-26T15:28:21.403Z",
+    "updated": "2025-02-26T15:28:21.403Z",
+    "storageClass": "STANDARD",
+    "timeStorageClassUpdated": "2025-02-26T15:28:21.403Z",
+    "size": "105",
+    "md5Hash": "67/MMICN4zRvhRMnEEMrBQ==",
+    "mediaLink": "https://storage.googleapis.com/download/storage/v1/b/mominali_gcs_10/o/citycd.csv?generation=1740583701400498&alt=media",
+    "crc32c": "vgkc+w==",
+    "etag": "CLKX5cnT4YsDEAE="
+  }
+}

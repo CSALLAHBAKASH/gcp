@@ -1,0 +1,19 @@
+{
+    "endpoint": "projects/massive-tensor-452009-d2/locations/us-central1/publishers/google/models/imagen-3.0-generate-002",
+    "instances": [
+        {
+            "prompt": "lion with tiger running and chasing  deer",
+        }
+    ],
+    "parameters": {
+        "aspectRatio": "16:9",
+        "sampleCount": 4,
+        "negativePrompt": "",
+        "enhancePrompt": false,
+        "personGeneration": "",
+        "safetySetting": "",
+        "addWatermark": true,
+        "includeRaiReason": true,
+        "language": "auto",
+    }
+}

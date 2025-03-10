@@ -1,0 +1,26 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', '${_IMAGE_NAME}:${_TAG_NAME}', '.']
+
+  - name: 'ubuntu'
+    args: ['bash', '-c', 'echo "Hello from Ubuntu!"']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['tag', '${_IMAGE_NAME}:${_TAG_NAME}', 'us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_TAG_NAME}']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_TAG_NAME}']
+
+images:
+  - 'us-central1-docker.pkg.dev/${_PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_TAG_NAME}'
+
+substitutions:
+  _PROJECT_ID: 'massive-tensor-452009-d2'
+  _REPO_NAME: 'example-repo'
+  _IMAGE_NAME: 'testimage'
+  _TAG_NAME: '1'
+
+
+# docker build -t sample-image:tag1 .
+# docker tag sample-image:tag1 us-central1-docker.pkg.dev/massive-tensor-452009-d2/example-repo/sample-image:tag1 
+# docker push us-central1-docker.pkg.dev/massive-tensor-452009-d2/example-repo/sample-image:tag1 
