@@ -54,7 +54,8 @@ gcloud services enable \
 
 
 gh repo create --source=. --public
-git push --set-upstream origin master
+git remote add origin https://github.com/CSALLAHBAKASH/gcp.git
+git push -u origin master or git push --set-upstream origin master
 
 
 
